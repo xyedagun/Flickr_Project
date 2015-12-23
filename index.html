@@ -71,14 +71,17 @@ body {
 	
 
 <div id="image-container"></div>
-<div id="lightbox">
-    <p>Click to close</p>
+<div id="#">
+    <button id="button" onclick="showhide()"><p>Close</p></button>
     <div id="content">
-        <img src="#" />
+        <img id="lightbox-photo" src="" />
     </div>
+    <div id="left-click"><</div><div id="right-click">></div>
 </div>
 
 <script type="text/javascript">
+
+
 (function() {
 	function FlickrProject() {
 		this.init();
@@ -86,60 +89,91 @@ body {
 	
 	FlickrProject.prototype = {
 		init: function() {
-			this.user = "9885480@N02"; //this is the user's id
-			this.album = "72157662157461495"; //album id
-			window.getPhotos = this.getPhotos; //photos are retrieved once the window opens
+			//this is the user's id
+			this.user = "9885480@N02"; 
+			//album id
+			this.album = "72157662157461495"; 
+			//photos are retrieved once the window opens
+			window.getPhotos = this.getPhotos; 
 			//JSON request from flickr
 			this.getJSON();	
 		},
 
 		
 		getJSON: function() {
-			
+			//flickr link to request json files
 			var src = "http://api.flickr.com/services/feeds/photoset.gne?nsid=" + this.user + "&set=" + this.album + "&format=json&jsoncallback=getPhotos";	
 			// http://api.flickr.com/services/feeds/photoset.gne?nsid=9885480@N02&set=72157662157461495&format=json&jsoncallback=getPhotos
+
 
 			var script = document.createElement( "script" );
 				script.src = src;
 				document.body.appendChild( script );
 		},
+
+
+		//function that takes photo info and links from jsondata
 		getPhotos: function( photo ) {
 			var limit = 14;
 			
 			if( photo && photo.items ) {
 				var title = photo.title;
+				//media properties from Json file
 				var items = photo.items;
+				//link of the thumbnail photo
 				var media = photo.media;
-				console.log(media);
+				//Deleting "Content from" on the title from Json
 				var albumName = title.replace( "Content from ", "" );
+				//Album name from jSon
 				var html = "<h3>" + albumName + "</h3>";
 				    html += "<div class='images'>";
+				//Array of photo links (source)
+				var photoSet = []
 
 				for( var i = 0; i < items.length; ++i ) {
 					var item = items[i];
+					//Editing the link of thumbnail image to a bigger size image by adding "b.jpg"
 					var source = item.media.m.slice(0,-5) + "b.jpg";
+					//Adding every source to the photoSet arrray
+					photoSet.push(source);
 					var picture = item.media.m.slice(0,-5) + "n.jpg";
-					console.log(source);
+				
+					//Adding photos to html
 					var n = i + 1;
 					if( n <= limit ) {
 						html += "<a href='" + source + "'><img src='" + picture + "' alt='' /></a>";
-					}	
-				}
+					}
+
+					function setLightboxPhoto(photo) {
+						var imageContainer = document.getElementById('lightbox-photo');
+						imageContainer.src = source;
+					}
+				} //end for
+
+				console.log(photoSet);
+
+				var currentPhoto = 0;
+
+				// lightboxView(function() {
+				// 	var firstPhoto = photoSet[0]
+				// 	setLightboxPhoto(photoSet[currentPhoto]);
+				// 	currentPhoto = (currentPhoto + 1) % photoSet.length;
+				// )};
+
+				//need to add even listener that upon click to the right, source +=, left click will be source -1 while source <= source.lenght
 				html += "</div>";
 				
 				document.querySelector( "#image-container" ).innerHTML = html;
 			}	
 		}
+
 	};
 	
+
 	document.addEventListener( "DOMContentLoaded", function() {
 		var flickrFeed = new FlickrProject();
-		
-	});
-	document.addEventListener("Click", function() {
-		e.preventDefault();
-		lightbox_trigger
-	});
+});
+
 	
 })();
 
