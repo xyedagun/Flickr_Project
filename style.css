@@ -3,19 +3,18 @@
 /************ styling inside id=image-container ***********/
 
 #image-container {
-	border: 1px solid #ddd;
 	margin: 0 auto;
 	max-width: 100%;
 	text-align: center;
 /*	background-color: #aaa;*/
 }
 #image-container h3 {
-	font-family: Arial, sans-serif;
+	font-family: "Century Gothic", Arial, Helvetica, sans-serif;
 	margin: 0;
 	padding: 0.9em;
 	background: #303030;
 	color: #fff;
-	font-weight: normal;
+	font-weight: bold;
 	font-size: 2em;
 	text-transform: uppercase;	
 }
@@ -23,9 +22,9 @@
 
 /************ styling inside class=container ***********/
 
-.container {
+#gallery-container {
 	width: 100%;
-	padding: 0 4%;
+	padding-top: 20px;
 }
 
 h1 {
@@ -52,7 +51,7 @@ a img {
 /************ styling for class=gallery ***********/
 .gallery {
 	max-width: 1024px;
-	background: #666;
+	background: #999;
 	margin: 0 auto;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
@@ -196,37 +195,37 @@ z-index: 1;
 			background: #fff;
 		}
 
-	article .arrow {
-		position: absolute;
-		top: 250px;
-		width: 0;
-		height: 0;
-		border-top: 40px solid transparent;
-		border-bottom: 40px solid transparent;
-		text-indent: -9999px;
-		-webkit-transition: .4s;
-		transition: .4s;
-	}
+		article .arrow {
+			position: absolute;
+			top: 250px;
+			width: 0;
+			height: 0;
+			border-top: 40px solid transparent;
+			border-bottom: 40px solid transparent;
+			text-indent: -9999px;
+			-webkit-transition: .4s;
+			transition: .4s;
+		}
 
-	article .prev {
-		left: 50%;
-		margin-left: -35%;
-		border-right: 60px solid rgba(250, 250, 250, .2);
-	}
+		article .prev {
+			left: 50%;
+			margin-left: -35%;
+			border-right: 60px solid rgba(250, 250, 250, .2);
+		}
 
-	article .prev:hover {
-		border-right-color: rgba(250, 250, 250, .4);
-	}
+		article .prev:hover {
+			border-right-color: rgba(250, 250, 250, .4);
+		}
 
-	article .next {
-		right: 50%;
-		margin-right: -35%;
-		border-left: 60px solid rgba(250, 250, 250, .2);
-	}
+		article .next {
+			right: 50%;
+			margin-right: -35%;
+			border-left: 60px solid rgba(250, 250, 250, .2);
+		}
 
-	article .next:hover {
-		border-left-color: rgba(250, 250, 250, .4);
-	}
+		article .next:hover {
+			border-left-color: rgba(250, 250, 250, .4);
+		}
 
 /************ the setting for the screen when viewport changes ***********/
 

@@ -18,7 +18,7 @@
 		//function to get jSon file
 		getJSON: function() {
 			//flickr link to request json files
-			var src = "http://api.flickr.com/services/feeds/photoset.gne?nsid=" + this.user + "&set=" + this.album + "&format=json&jsoncallback=getPhotos";	
+			var src = "https://api.flickr.com/services/feeds/photoset.gne?nsid=" + this.user + "&set=" + this.album + "&format=json&jsoncallback=getPhotos";	
 			// http://api.flickr.com/services/feeds/photoset.gne?nsid=9885480@N02&set=72157660390506564&format=json&jsoncallback=getPhotos
 
 			var script = document.createElement( "script" );
