@@ -20,6 +20,6 @@ The goals of this project:
 * HTML
 
 
-The project is hosted on [heroku](https://radiant-ridge-3805.herokuapp.com/)
-The source code is located on [github](https://github.com/xyedagun/Flickr_Project)
+The project is hosted on [heroku](https://radiant-ridge-3805.herokuapp.com/).
+The source code is located on [github](https://github.com/xyedagun/Flickr_Project).
 
