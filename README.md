@@ -4,7 +4,7 @@ The goals of this project:
 
 * Use pure Javascript
 * Access data using Flickr API
-* Able to display image data on a lightbox view
+* Display image data on a lightbox view
 
 
 ## Main Page
