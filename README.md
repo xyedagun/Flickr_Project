@@ -5,10 +5,10 @@ The goal of this project:
 * Able to display image data on a lightbox view
 
 ## Main Page
-![Homepage](/../homepage.png)
+![Homepage](../../homepage.png)
 
 ## Lightbox View
-![Lightbox](/../lightbox_sample.png)
+![Lightbox](../../lightbox_sample.png)
 
 
 
