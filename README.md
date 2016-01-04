@@ -13,7 +13,7 @@ The goal of this project:
 
 
 
-# Technology Track
+# Technology Used
 * Javascript
 * CSS
 * HTML
